@@ -50,27 +50,4 @@ public class TaskJsonReader {
 
         return tasks;
     }
-
-    /**
-     * Example of how to use the TaskJsonReader.
-     */
-    public static void main(String[] args) {
-        try {
-            List<Task> tasks = readTasksFromJson("tasks.json");
-            System.out.println("Successfully loaded " + tasks.size() + " tasks");
-
-            // Print out all loaded tasks for verification
-            for (Task task : tasks) {
-                System.out.println("Task ID: " + task.getId() +
-                        ", Burst Time: " + task.getBurstTime() +
-                        ", Arrival Time: " + task.getArrivalTime() +
-                        ", Priority: " + task.getPriorityNumber());
-            }
-
-            // Tasks can now be passed to your CPU scheduler
-
-        } catch (IOException | ParseException e) {
-            System.err.println("Error reading tasks file: " + e.getMessage());
-        }
-    }
 }
